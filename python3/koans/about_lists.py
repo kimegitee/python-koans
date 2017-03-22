@@ -24,7 +24,7 @@ class AboutLists(Koan):
         self.assertListEqual([1, 2], nums)
 
         nums.append(333)
-        self.assertListEqual([1, 2, __], nums)
+        self.assertListEqual([1, 2, 333], nums)
 
     def test_accessing_list_elements(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
