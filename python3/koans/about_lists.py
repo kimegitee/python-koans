@@ -21,7 +21,7 @@ class AboutLists(Koan):
         self.assertEqual([1], nums)
 
         nums[1:] = [2]
-        self.assertListEqual([1, __], nums)
+        self.assertListEqual([1, 2], nums)
 
         nums.append(333)
         self.assertListEqual([1, 2, __], nums)
