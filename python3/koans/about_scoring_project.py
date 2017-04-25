@@ -32,9 +32,40 @@ from runner.koan import *
 #
 # Your goal is to write the score method.
 
+from collections import Counter
+
+
 def score(dice):
-    # You need to write this method
-    pass
+    '''
+    Calculate the scores for results of up to fice dice rolls
+    '''
+
+    return sum((score_of_three(k) * (v//3) + score_of_one(k) * (v%3) for k, v in Counter(dice).items()))
+
+
+def score_of_three(num):
+    '''
+    Calculate score for set of three
+    '''
+    
+    if num == 1:
+        return 1000
+    else:
+        return num*100
+
+
+def score_of_one(num):
+    '''
+    Calculate score for a roll not in a set of three
+    '''
+
+    if num == 1:
+        return 100
+    elif num == 5:
+        return 50
+    else:
+        return 0
+
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
